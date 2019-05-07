@@ -5,12 +5,13 @@
 
 * about :
 - I am from south of lebanon
-- I studied Computer Science But Unfortunaly due 
-- to some bat situation I left my university
-- without graduation
+I studied Computer Science But Unfortunaly due 
+to some bad situation I left my university
+without graduation
 
 * skills :
 Word, Exel
 
 * Hobbies :
-Swimming & Travel.
+Swimming & Travel
+![alt text](bloom-blossom-dew-56866.jpg)
