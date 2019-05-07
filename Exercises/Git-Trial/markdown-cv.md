@@ -9,6 +9,10 @@
 - to some bat situation I left my university
 - without graduation
 
+* Work Experience:
+- Public relation in Alahed TV
+- Teacher Math
+
 * skills :
 Word, Exel
 
