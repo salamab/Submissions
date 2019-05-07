@@ -9,6 +9,10 @@ I studied Computer Science But Unfortunaly due
 to some bad situation I left my university
 without graduation
 
+* Work Experience:
+- Public relation in Alahed TV
+- Teacher Math
+
 * skills :
 Word, Exel
 
