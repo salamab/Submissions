@@ -1,0 +1,57 @@
+body {
+    background-color: dimgray;
+    margin: auto;
+    width: 1000px;
+    
+
+
+}
+
+header{
+background-image: url("programming.jpg");
+height: 500px;
+width: 1000px;
+}
+h2{
+color: white;
+padding-left: 60px;
+padding-top: 90px;
+
+}
+
+.topnav{
+    background-color: gray;
+    padding: 18px 40px;
+}
+.side1{
+    float: left;
+    width: 40%;
+}
+
+
+
+.side2{
+    width: 60%;
+    float: right;   
+}
+
+.sub{
+    float: left;
+    width: 50%;
+}
+.other{
+    float: right;
+    width: 50%;
+}
+footer{
+    display: inline-block;
+    clear: both;
+}
+.copy{
+text-align: center;
+}
+.formmm{
+display: inline-block;    
+}
+
+
