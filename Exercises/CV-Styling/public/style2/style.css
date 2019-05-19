@@ -1,0 +1,16 @@
+#\#wrapper{
+    border: solid 0.5px lightgrey;
+    width: 1000px;
+    position: fixed;
+    
+
+
+}
+
+hgroup h1{
+    color: black;
+}
+hgroup h2{
+    display: none;
+}
+
