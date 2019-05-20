@@ -1,16 +1,81 @@
 #\#wrapper{
-    border: solid 0.5px lightgrey;
-    width: 1000px;
-    position: fixed;
+    padding-left: 150px;
+    padding-right: 100px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
     
-
-
+    
 }
 
-hgroup h1{
+header {
+    height: 70px;
+}
+h1{
+    padding-top: 50px;
     color: black;
+    /*border-bottom: solid 1px grey;*/
+    }
+h1::after{
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 100%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 0.5px solid #CCCCCC;
 }
+
 hgroup h2{
     display: none;
 }
+figure {
+float: right;
+    transform: rotate(-15deg);
 
+}
+figure img{
+    transform: scale(1.85,1.85);
+    margin-right: 200px;
+    padding-bottom: 200px;
+
+}
+#about h3{
+    visibility: hidden;
+}
+#about p{
+    width: 53%;
+    font-style: italic;
+    color: grey;
+    text-align: justify;
+    text-justify: inter-word;
+}
+h3{
+    font-style: italic;
+}
+#competencies h3{
+    height:100px;
+    width:15%;
+    float:left;
+    border-right:2px solid black;
+
+}
+.skills{
+    overflow:auto;
+    height:50%;
+}
+.skill{
+    background-color:#008080;
+    display:inline-block;
+    width:105px;
+    padding:5px;
+    margin:5px;
+}
+.skills-primary .skill{
+    margin-top:20px;
+}.skills-primary .skill[data-skill="5"]::after{
+    content:"\22c6\22c6\22c6";
+    color:white;
+    font-size:30px;
+    font-weight: bold;
+    float:right;
+    height: 25px;
+}
