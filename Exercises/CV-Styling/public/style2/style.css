@@ -1,9 +1,14 @@
+body{
+    overflow-x: hidden;
+
+}
+
 #\#wrapper{
     padding-left: 150px;
-    padding-right: 100px;
+    padding-right: 120px;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    
+    margin: auto;
     
 }
 
@@ -20,43 +25,61 @@ h1::after{
     display: block; /* This will put the pseudo element on its own line. */
     margin: 0 auto; /* This will center the border. */
     width: 100%; /* Change this to whatever width you want. */
-    padding-top: 20px; /* This creates some space between the element and the border. */
+    padding-top: 35px; /* This creates some space between the element and the border. */
     border-bottom: 0.5px solid #CCCCCC;
 }
 
 hgroup h2{
     display: none;
 }
-figure {
-float: right;
-    transform: rotate(-15deg);
 
+/*img{
+
+    position: absolute;
+    right: 210px;
+    top:100px;
+    transform: rotate(-15deg);
+    
+  }*/
+
+
+figure {
+    position: absolute;
+    right: 135px;
+    transform: rotate(-15deg);
+    top: 90px;
 }
 figure img{
-    transform: scale(1.85,1.85);
-    margin-right: 200px;
-    padding-bottom: 200px;
-
+    transform: scale(1.55,1.55);
+   /* margin-left: 50x;
+    padding-bottom: 200px;*/
 }
+
+
 #about h3{
     visibility: hidden;
 }
 #about p{
-    width: 53%;
+    width: 70%;
     font-style: italic;
     color: grey;
     text-align: justify;
     text-justify: inter-word;
+    margin-bottom: 90px;
 }
 h3{
     font-style: italic;
 }
+
+#competencies{
+    margin-bottom:50px;
+}
+
 #competencies h3{
     height:100px;
     width:15%;
     float:left;
-    border-right:2px solid black;
-
+    border-right:1px solid black;
 }
 .skills{
     overflow:auto;
@@ -65,17 +88,208 @@ h3{
 .skill{
     background-color:#008080;
     display:inline-block;
-    width:105px;
+    width:110px;
     padding:5px;
     margin:5px;
+    color: white;
+
 }
 .skills-primary .skill{
     margin-top:20px;
-}.skills-primary .skill[data-skill="5"]::after{
-    content:"\22c6\22c6\22c6";
+    /*font-weight: bold;*/
     color:white;
-    font-size:30px;
-    font-weight: bold;
-    float:right;
     height: 25px;
+    font-size: 18px;
+}
+.skills-primary .skill[data-skill="5"]::after{
+    content:"\22c6\22c6\22c6";
+    /*color:white;*/
+    /*font-size:30px;*/
+    /*font-weight: bold;*/
+    float:right;
+    padding: 5px;
+}
+.skills-primary .skill[data-skill="3"]::after{
+    content:"\22c6\22c6";
+    float: right;
+    padding: 5px;
+}
+.skills-primary .skill[data-skill="1"]::after{
+content: "\22c6";
+float: right;
+padding: 5px;
+}
+
+
+/*secondary skill*/
+.skills-secondary{
+font-size: 11px;
+
+}
+.skills-secondary .skill[data-skill="9"]::after{
+    content:"\22c6\22c6\22c6\22c6\22c6";
+    float: right;
+}
+.skills-secondary .skill[data-skill="5"]::after{
+    content:"\22c6\22c6\22c6";
+    float: right;
+}
+.skills-secondary .skill[data-skill="7"]::after{
+    content:"\22c6\22c6\22c6\22c6";
+    float: right;
+}
+#experiences h3, #education h3{
+    height:275px;
+    width:15%;
+    float:left;
+    border-right:1px solid black;
+}
+
+#experiences, #education{
+    height:400px;
+    margin-bottom: 20px;
+}
+
+.experience {
+    margin-left:16%;
+}
+
+.experience-type{
+    color: #008080;
+    display: inline-block;
+}
+
+.experience-institution{
+    visibility: hidden;
+}
+
+.experience-details{
+    color: grey;
+    float: right;
+    margin-top:15px;
+}
+.experience h4{
+    display: inline-block;
+}
+
+.experience-discription{
+    overflow: auto;
+    
+}
+
+#hobbies{
+    margin-top: 20px;
+}
+
+#hobbies h3{
+    height: 100px;
+    float:left;
+    width:15%;
+    border-right:1px solid black;
+}
+
+#hobbies ul{
+    display: inline-block;
+}
+
+/*contacts*/
+
+#contact h3,
+.contact-type,
+.contact-value{
+    visibility: hidden;
+}
+
+.contacts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-email
+{
+    background-image: url('../images/email.png');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.contact-phone{
+    background-image:url('../images/phone.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100px;
+    height:100px;
+}
+.contact-github{
+    background-image: url("../images/github.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100px;
+    height:100px;
+}
+
+.contact-facebook{
+    background-image:url('../images/facebook.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100px;
+    height:100px;
+}
+
+@media(max-width:768px){
+
+    #\#wrapper{
+        width:100vw;
+        font-size: 12px;
+        padding-left: 15%;
+        padding-right: 20%;
+    }
+
+    img{
+        display:none;
+    }
+
+.experience{
+    
+    width: 50%;
+}
+#competencies h3 {
+    position: absolute;
+    left: 110px;
+    top: 255px;
+    border-right: none;
+    text-decoration-line: underline;
+    /*border-bottom: 1px solid #000;
+    margin-bottom: 0px;*/
+}
+#experiences h3 {
+    position: absolute;
+    left: 110px;
+    top: 390px;
+    border-right: none;
+    text-decoration-line: underline;
+    /*border-bottom: 1px solid #000;
+    margin-bottom: 0px;*/
+}
+#education h3{
+    position: absolute;
+    left: 110px;
+    top: 810px;
+    border-right: none;
+    text-decoration-line: underline;
+}
+
+
+    .contacts{
+        margin-left:33%;
+        display:flex;
+        flex-direction: column;
+    }
+
 }
