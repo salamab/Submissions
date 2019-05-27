@@ -1,7 +1,4 @@
-body{
-    overflow-x: hidden;
 
-}
 
 #\#wrapper{
     padding-left: 150px;
@@ -15,17 +12,18 @@ body{
 header {
     height: 70px;
 }
+
 h1{
     padding-top: 50px;
     color: black;
     /*border-bottom: solid 1px grey;*/
-    }
+}
 h1::after{
     content: ""; /* This is necessary for the pseudo element to work. */ 
     display: block; /* This will put the pseudo element on its own line. */
     margin: 0 auto; /* This will center the border. */
     width: 100%; /* Change this to whatever width you want. */
-    padding-top: 35px; /* This creates some space between the element and the border. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
     border-bottom: 0.5px solid #CCCCCC;
 }
 
@@ -138,6 +136,7 @@ font-size: 11px;
     content:"\22c6\22c6\22c6\22c6";
     float: right;
 }
+
 #experiences h3, #education h3{
     height:275px;
     width:15%;
@@ -146,12 +145,14 @@ font-size: 11px;
 }
 
 #experiences, #education{
+    
     height:400px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .experience {
     margin-left:16%;
+    /* padding-bottom: px; */
 }
 
 .experience-type{
@@ -174,11 +175,12 @@ font-size: 11px;
 
 .experience-discription{
     overflow: auto;
-    
+    margin-bottom: 0px;
 }
 
 #hobbies{
     margin-top: 20px;
+    
 }
 
 #hobbies h3{
@@ -242,54 +244,96 @@ font-size: 11px;
     height:100px;
 }
 
+
 @media(max-width:768px){
 
-    #\#wrapper{
-        width:100vw;
-        font-size: 12px;
-        padding-left: 15%;
-        padding-right: 20%;
-    }
-
-    img{
-        display:none;
-    }
-
-.experience{
+    body{
+        overflow-x: hidden;
     
-    width: 50%;
-}
-#competencies h3 {
-    position: absolute;
-    left: 110px;
-    top: 255px;
-    border-right: none;
-    text-decoration-line: underline;
-    /*border-bottom: 1px solid #000;
-    margin-bottom: 0px;*/
-}
-#experiences h3 {
-    position: absolute;
-    left: 110px;
-    top: 390px;
-    border-right: none;
-    text-decoration-line: underline;
-    /*border-bottom: 1px solid #000;
-    margin-bottom: 0px;*/
-}
-#education h3{
-    position: absolute;
-    left: 110px;
-    top: 810px;
-    border-right: none;
-    text-decoration-line: underline;
-}
+    }
+
+    #\#wrapper{
+        width: 90%;
+        padding-left: 20%;
+        padding-right: 50%;
+        margin-right: 10px;
+    } 
+
+    figure{
+        visibility: hidden;
+
+    }
+    #competencies h3{
+        position: absolute;
+        border-right: none;
+        top: 280px;
+        }
 
 
-    .contacts{
-        margin-left:33%;
-        display:flex;
+    
+    #competencies h3::after{
+        content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 150%; /* Change this to whatever width you want. */
+        padding-top: 0px; /* This creates some space between the element and the border. */
+        border-bottom: 0.5px solid black;    
+    }
+    
+
+    #experiences h3{
+        position: absolute;
+        border-right: none;
+        top: 425px;
+    }
+    #experiences h3::after{
+        content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 150%; /* Change this to whatever width you want. */
+        padding-top: 0px; /* This creates some space between the element and the border. */
+        border-bottom: 0.5px solid black;
+    }
+
+    #education h3{
+        position: absolute;
+        border-right: none;
+        top: 850px;
+    }
+    #education h3::after{
+        content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 150%; /* Change this to whatever width you want. */
+        padding-top: 0px; /* This creates some space between the element and the border. */
+        border-bottom: 0.5px solid black;
+
+    }
+    #hobbies h3{
+        position: absolute;
+        border-right: none;
+        top: 1230px;
+    }
+    #hobbies h3::after{
+        content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 150%; /* Change this to whatever width you want. */
+        padding-top: 0px; /* This creates some space between the element and the border. */
+        border-bottom: 0.5px solid black;
+
+    }
+
+    #contact{
+        align-content: flex-start;
+        display: flex;
+        width: 70px;
+        flex-wrap: wrap;
         flex-direction: column;
+    }
+    
+    .experience{margin-left: 0px;
+    width: 70%;
     }
 
 }
