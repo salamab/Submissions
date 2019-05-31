@@ -1,0 +1,26 @@
+img{
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 80px;
+    height: 30px;;
+}
+input[type=text]{
+    margin-left: 7cm;
+    width: 600px;
+
+}
+button{
+
+   
+    width: 60px;
+    height: 30px;
+
+}
+.Icon{
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    margin-left: 100px;
+    padding-top: 27px;
+}
+
