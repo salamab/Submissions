@@ -66,6 +66,7 @@ CREATE TABLE graduates (
 -- Result: table graduates already exists
 
 
+
 2. Add the graduation date previously mentioned to Layal's record in graduates
 UPDATE graduates
 SET Graduation = 08/09/2018
@@ -77,6 +78,9 @@ WHERE name = 'Layal';
 DELETE FROM students
 WHERE id = 4;
 -- Result: query executed successfully. Took 0ms, 1 rows affected
+
+
+Joins:
 
 11. Produce a table that contains, for each employee, his/her name, company name, and company date.
 SELECT employees.name, companies.Name, companies.Date
