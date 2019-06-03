@@ -50,5 +50,32 @@ WHERE name = 'Alex'
 
 
 
+Creating Table:
+
+1. Copy Layal's data from students to graduates
+CREATE TABLE graduates (
+ID, Integer, Not Null, Primary key, Auto incerement
+Name, Text, Not Null, Unique
+Age, Integer
+Gender, Text
+Points, Integer
+Graduation, Text
+);
+-- At line 1:
+CREATE TABLE graduates (
+-- Result: table graduates already exists
+
+
+2. Add the graduation date previously mentioned to Layal's record in graduates
+UPDATE graduates
+SET Graduation = 08/09/2018
+WHERE name = 'Layal';
+-- Result: query executed successfully. Took 0ms, 0 rows affected
+
+
+Remove Layal's record from students
+DELETE FROM students
+WHERE id = 4;
+-- Result: query executed successfully. Took 0ms, 1 rows affected
 
 
