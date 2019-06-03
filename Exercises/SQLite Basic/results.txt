@@ -113,5 +113,50 @@ Snapchat
 -- Result: 1 rows returned in 24ms
 
 
+Count and filter
+
+
+14. Find the person with the highest number of points in students
+SELECT name FROM students
+WHERE Points= (SELECT MAX(points) AS LargestPoint FROM students);
+
+salam
+
+
+
+15. Find the average of points in students
+SELECT avg(points)
+from students;
+
+391.666666666667
+
+
+16. Find the number of students that have 500 points
+SELECT count(Points) FROM students
+
+WHERE Points = 500;
+2
+
+
+17. Find the names of students that contains 's'
+SELECT name FROM students
+WHERE name like '%s%';
+
+Basma
+Hasan
+salam
+
+18. Find all students based on the decreasing order of their points
+SELECT name, Points
+FROM students
+ORDER by Points
+DESC;
+
+salam	700
+Robert	500
+Jana	500
+Basma	400
+Hasan	150
+Alex	100
 
 
