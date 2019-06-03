@@ -78,4 +78,36 @@ DELETE FROM students
 WHERE id = 4;
 -- Result: query executed successfully. Took 0ms, 1 rows affected
 
+11. Produce a table that contains, for each employee, his/her name, company name, and company date.
+SELECT employees.name, companies.Name, companies.Date
+FROM employees
+INNER JOIN companies ON employees.ID = companies.ID;
+
+Alaa	Instagram	2010
+Hala	Snapchat	2011
+Marc	Google	1998
+Maria	Facebook	2004
+-- Result: 4 rows returned in 6ms-- Result: 4 rows returned in 6ms
+
+12. Find the name of employees that work in companies made before 2000.
+SELECT name 
+FROM employees
+WHERE EXISTS
+(SELECT Name FROM companies WHERE employees.ID = companies.ID AND companies.Date<2000);
+
+Marc
+-- Result: 1 rows returned in 4ms
+
+
+
+Find the name of company that has a graphic designer.
+SELECT name 
+FROM companies
+WHERE EXISTS
+(SELECT Role FROM employees WHERE employees.ID = companies.ID AND Role = 'Graphic Designer');
+Snapchat
+-- Result: 1 rows returned in 24ms
+
+
+
 
