@@ -73,7 +73,7 @@ WHERE name = 'Layal';
 -- Result: query executed successfully. Took 0ms, 0 rows affected
 
 
-Remove Layal's record from students
+3.Remove Layal's record from students
 DELETE FROM students
 WHERE id = 4;
 -- Result: query executed successfully. Took 0ms, 1 rows affected
