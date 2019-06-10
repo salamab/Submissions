@@ -74,11 +74,11 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(text){
-  if (!text) {
+function hello(arrText){
+  if (arrText === undefined) {
     console.log("hello!")
   }else {
-    console.log("hello" + " " + text+ "!")
+    console.log("hello" + " " + arrText+ "!")
   }}
 /**
  * Exits the application
