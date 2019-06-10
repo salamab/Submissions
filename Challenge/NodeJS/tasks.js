@@ -9,6 +9,7 @@
  * @param  {string} name the name of the app
  * @returns {void}
  */
+var listTasks = ["hello", "quit", "help", "unknownCommand"];
 function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
@@ -49,6 +50,9 @@ function onDataReceived(text) {
 
   else if (arrText[0] === 'help'){
     help();
+  }
+  else if(arrText[0] === 'list'){
+    list();
   }
   else{
     unknownCommand(text);
@@ -97,6 +101,14 @@ function quit(){
 function help (){
 console.log ("hello\n", "quit\n", "help\n", "hello with another word + !");
 
+}
+
+/*list */
+
+function list() {
+  for (var i = 0; i<listTasks.length; i++){
+    console.log((i + 1) + ":" + " " + listTasks[i]);
+  }
 }
 
 // The following line starts the application
