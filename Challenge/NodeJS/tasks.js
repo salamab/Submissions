@@ -33,14 +33,21 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+
 function onDataReceived(text) {
-  if (text === 'quit\n' || text === 'exit\n') {
+  text= text.replace('\n', "").trim();
+   var arrText = text.split(" ");
+  console.log(arrText);
+  if (arrText[0] === 'quit' || arrText[0] === 'exit') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+
+  else if(arrText[0] === 'hello'){
+    hello(arrText[1]);
   }
-  else if (text === 'help\n'){
+
+
+  else if (arrText[0] === 'help'){
     help();
   }
   else{
@@ -58,7 +65,7 @@ function onDataReceived(text) {
  * @returns {void}
  */
 function unknownCommand(c){
-  console.log('unknown command: "'+c.trim()+'"')
+  console.log('unknown command: '+c)
 }
 
 
@@ -67,11 +74,12 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello to node!')
-}
-
-
+function hello(text){
+  if (!text) {
+    console.log("hello!")
+  }else {
+    console.log("hello" + " " + text+ "!")
+  }}
 /**
  * Exits the application
  *
@@ -87,7 +95,7 @@ function quit(){
  * help function lists all the possible commands:
  */
 function help (){
-console.log ("hello to node!/n", "Quitting now, goodbye!", unknownCommand());
+console.log ("hello\n", "quit\n", "help\n");
 
 }
 
