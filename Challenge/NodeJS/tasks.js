@@ -95,7 +95,7 @@ function quit(){
  * help function lists all the possible commands:
  */
 function help (){
-console.log ("hello\n", "quit\n", "help\n");
+console.log ("hello\n", "quit\n", "help\n", "hello with another word + !");
 
 }
 
