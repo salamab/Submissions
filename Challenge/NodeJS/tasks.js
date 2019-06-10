@@ -84,7 +84,7 @@ function quit(){
 
 
 /**
- * help function lists all the possible commands
+ * help function lists all the possible commands:
  */
 function help (){
 console.log ("hello to node!/n", "Quitting now, goodbye!", unknownCommand());
