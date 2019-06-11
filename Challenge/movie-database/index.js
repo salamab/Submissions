@@ -7,10 +7,10 @@ app.get('/', function (req, res) {
     res.send('ok');
 });
 
-// On localhost:3000/welcome
+/* On localhost:3000/welcome
 app.get('/welcome', function (req, res) {
     res.send('<b>Hello</b> welcome to my http server made with express');
-});
+});*/
 
 // Change the 404 message modifing the middleware
 app.use(function(req, res, next) {
