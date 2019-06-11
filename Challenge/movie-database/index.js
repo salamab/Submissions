@@ -7,6 +7,16 @@ app.get('/', function (req, res) {
     res.send('ok');
 });
 
+app.get('/test', function(req, res){
+    res.send({status:200, message:"ok"})
+})
+
+app.get('/time', function(req, res){
+   var time = new Date();
+    res.send({status: 200,
+        message: time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
+    })
+})
 /* On localhost:3000/welcome
 app.get('/welcome', function (req, res) {
     res.send('<b>Hello</b> welcome to my http server made with express');
