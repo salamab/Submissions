@@ -76,6 +76,33 @@ app.get('/movies/read/id/:id',function(req,res){
         { res.send({status:404, error:true, message:'the movie '+ID+ ' does not exist'}) }
 })
 
+//Step 8 add a new movie
+app.get('/movies/add', function(req, res){
+    var newTitle = req.query.title;
+    var newYear = req.query.year;
+    var newRating = req.query.rating;
+    // movies.unshift({title:newTitle,year:newYear,rating:newRating})
+    // res.send({
+    // data:movies
+    // })
+
+    if (newTitle == undefined || newYear == undefined || newYear<newYear.length || isNaN(newYear)){
+        res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
+    }
+    else if(newRating == undefined){
+    movies.unshift({title:newTitle,year:newYear,rating:'4'})
+        res.send({
+            status:404,
+            data:movies  
+        })
+    }
+    else{
+        movies.unshift({title:newTitle,year:newYear,rating:newRating})
+        res.send({
+            status:403,
+            data:movies
+    })}
+})
 
 
 /* On localhost:3000/welcome
