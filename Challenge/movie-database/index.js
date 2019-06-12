@@ -17,6 +17,28 @@ app.get('/time', function(req, res){
         message: time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
     })
 })
+
+app.get('/hello/:ID', function(req, res){
+    res.send({status:200, 
+        message:'Hello,'+ req.params.ID
+})
+});
+
+
+app.get('/search', function(req, res){
+    const entry = req.query.s;
+    if (entry !== undefined && entry !== ""){
+        res.send({status:200, message:"ok", entry})
+    }
+        else{
+            res.send({status:500, error:true, message:"you have to provide a search"})
+        }
+    
+});
+
+
+
+
 /* On localhost:3000/welcome
 app.get('/welcome', function (req, res) {
     res.send('<b>Hello</b> welcome to my http server made with express');
