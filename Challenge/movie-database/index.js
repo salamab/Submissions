@@ -34,7 +34,7 @@ app.get('/search', function(req, res){
             res.send({status:500, error:true, message:"you have to provide a search"})
    }
 });
-
+// Step 5:
 const movies =[
 {title: 'Jaws', year: 1975, rating: 8},
 {title: 'Avatar', year: 2009, rating: 7.8},
@@ -54,6 +54,19 @@ app.get('/movies/delete' ,function(req, res){
     res.send("By");
 });
 
+//Step 6
+app.get('/movies/read/by-date', function(req, res){
+    res.send({status:200, data: movies.sort(function(a, b){
+        return (a.year - b.year)}) }) });
+
+app.get('/movies/read/by-rating', function(req,res){
+    res.send({status:200, data:movies.sort(function(a, b){
+        return(a.rating - b.rating) }) }) });
+
+app.get('/movies/read/by-title', function(req, res){
+    res.send({status:200, data:movies.sort((a, b) => a.title.localeCompare(b.title))}); });
+
+
 
 
 
@@ -63,11 +76,12 @@ app.get('/welcome', function (req, res) {
 });*/
 
 // Change the 404 message modifing the middleware
-app.use(function(req, res, next) {
+ app.use(function(req, res, next) {
     res.status(404).send("Sorry, that route doesn't exist. Have a nice day :)");
-});
+ });
 
-// start the server in the port 3000 !
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000.');
-});
+//start the server in the port 3000 !
+ app.listen(3000, function () {
+     console.log('Example app listening on port 3000.');
+ });
+
