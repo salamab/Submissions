@@ -141,7 +141,9 @@ app.get('/movies/update/:id',function(req, res){
         }
         else{res.send({message:'fillllllllll'})}
 })
-
+// Step 11 - Use HTTP Verbs
+// change the urls to use HTTP VERBS (look it up. Google "rest APIs", and see "how to build REST APIs with Express")
+// commit ("step 11")
 
 
 
