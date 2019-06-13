@@ -24,7 +24,7 @@ app.get('/hello/:ID', function(req, res){
 })
 });
 
-
+//step4:
 app.get('/search', function(req, res){
     const entry = req.query.s;
     if (entry !== undefined && entry !== ""){
@@ -34,6 +34,8 @@ app.get('/search', function(req, res){
             res.send({status:500, error:true, message:"you have to provide a search"})
    }
 });
+
+
 // Step 5:
 const movies =[
 {title: 'Jaws', year: 1975, rating: 8},
@@ -103,6 +105,29 @@ app.get('/movies/add', function(req, res){
             data:movies
     })}
 })
+
+//step 9: Delete the corresponding movie
+app.get('/movies/delete/:ID', function(req, res){
+    const id = req.params.ID
+    if (id>=0 && id<movies.length-1){
+        movies.splice(id,1);
+        res.send({status: 200,
+            message: movies});
+        }
+    else{
+        res.send({status:404, error:true, message:'the movie <ID> does not exist'})
+   }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 /* On localhost:3000/welcome
