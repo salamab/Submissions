@@ -119,6 +119,28 @@ app.get('/movies/delete/:ID', function(req, res){
    }
 });
 
+//step 10: 
+
+app.get('/movies/update/:id',function(req, res){
+    const id = req.params.id;
+    const newTitle = req.query.title;
+    const newRating = parseInt(req.query.rating);
+    const newYear = parseInt(req.query.year);
+    
+    if ( id>=0 && id<=movies.length-1){
+        if (movies[id].title != newTitle){
+        movies[id].title = newTitle;}
+        else if (movies[id].rating != newRating){
+            movies[id].rating = newRating;
+        }else if(movies[id].year != newYear){
+            movies[id].year = newYear;
+        }
+    
+        res.send({status: 200,
+            message: movies});
+        }
+        else{res.send({message:'fillllllllll'})}
+})
 
 
 
