@@ -1,7 +1,20 @@
 // Require express and create an instance of it
 var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+const url ='mongodb+srv://salamab:auce-336929@salamdb1-melis.mongodb.net/test?retryWrites=true&w=majority';
 
+mongoose.Promise = global.Promise;
+
+mongoose.connect(url,{ useNewUrlParser: true});
+
+const moviesSchema = new mongoose.Schema({
+    title: String,
+    year: Number,
+    rating: Number,
+    });
+
+    const moviesdata = mongoose.model("movies", moviesSchema);
 // on the request to root (localhost:3000/)
 app.get('/', function (req, res) {
     res.send('ok');
@@ -89,21 +102,35 @@ app.get('/movies/add', function(req, res){
     // })
 
     if (newTitle == undefined || newYear == undefined || newYear<newYear.length || isNaN(newYear)){
-        res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
-    }
-    else if(newRating == undefined){
-    movies.unshift({title:newTitle,year:newYear,rating:'4'})
-        res.send({
-            status:404,
-            data:movies  
-        })
-    }
-    else{
-        movies.unshift({title:newTitle,year:newYear,rating:newRating})
-        res.send({
-            status:403,
-            data:movies
-    })}
+        var movie = new moviesdata({title:newTitle,year:newYear,rating:'4'})
+        movie.save().then((data)=> {
+            res.send({
+                status:404,
+                data: data  
+            })
+           })
+          .catch((err)=> {
+            console.log(err);
+            res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
+          })
+       
+    //     res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
+    // }
+    // else if(newRating == undefined){
+    // movies.unshift({title:newTitle,year:newYear,rating:'4'})
+    //     res.send({
+    //         status:404,
+    //         data:movies  
+    //     })
+    // }
+    // else{
+    //     movies.unshift({title:newTitle,year:newYear,rating:newRating})
+    //     res.send({
+    //         status:403,
+    //         data:movies
+    // })}
+}
+
 })
 
 //step 9: Delete the corresponding movie
@@ -144,6 +171,8 @@ app.get('/movies/update/:id',function(req, res){
 // Step 11 - Use HTTP Verbs
 // change the urls to use HTTP VERBS (look it up. Google "rest APIs", and see "how to build REST APIs with Express")
 // commit ("step 11")
+//Step 12: Data Persistence
+
 
 
 
